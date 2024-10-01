@@ -14,3 +14,19 @@ Select Enabled BypassPerfRequirement
 (/images/chrome_flags.jpg)
 
 3.	Relaunch Chrome
+
+4.	Go to chrome://components
+Check Optimization Guide On Device Model version greater or equal to 2024.5.21.1031.
+
+(/images/chrome_compoments.jpg)
+
+5.	Press “F12” open DevTools and send
+(await ai.assistant.capabilities()).available;
+in the console.
+If this returns “readily”, then you are all set.
+
+Download test.html to your PC. Open it with Chrome Developer Version and enter your prompt.
+
+(/images/test.jpg)
+
+Now you can run Gemini Nano locally.
