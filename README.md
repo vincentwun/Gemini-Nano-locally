@@ -19,7 +19,9 @@ In this article, I am going to share how to use Google Chrome (Developer Version
    ![Chrome Components](images/chrome_components.jpg)
 
 6. Press **F12** to open DevTools and enter the following command in the console:
+
    (await ai.assistant.capabilities()).available;
+
    If this returns **“readily”**, then you are all set.
 
 7. Download `Gemini_Nano_test.html` to your PC. Open it with the Chrome Developer Version and enter your prompt.
