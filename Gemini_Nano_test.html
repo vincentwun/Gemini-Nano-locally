@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrome Gemini Nano Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        #output {
+            white-space: pre-wrap;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 4px;
+            min-height: 100px;
+        }
+        button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Chrome Gemini Nano Test</h1>
+        <label for="prompt">Prompt:</label>
+        <input type="text" id="prompt" value="" />
+        <label for="temperature">Temperature:</label>
+        <input type="number" id="temperature" min="0" max="1" step="0.1" value="0.7" />
+        <label for="topK">Top-K:</label>
+        <input type="number" id="topK" min="1" max="128" step="1" value="40" />
+        <button onclick="runTest()">Run API Test</button>
+        <div id="output"></div>
+    </div>
+
+    <script>
+        async function runTest() {
+            const outputElement = document.getElementById('output');
+            const promptInput = document.getElementById('prompt');
+            const temperatureInput = document.getElementById('temperature');
+            const topKInput = document.getElementById('topK');
+
+            outputElement.textContent = 'Running test...';
+
+            try {
+                const { available, defaultTemperature, defaultTopK, maxTopK } = await ai.assistant.capabilities();
+
+                if (available !== "no") {
+                    const session = await ai.assistant.create({
+                        temperature: parseFloat(temperatureInput.value),
+                        topK: parseInt(topKInput.value, 10)
+                    });
+
+                    const result = await session.prompt(promptInput.value);
+                    outputElement.textContent = `AI Assistant's response:\n\n${result}`;
+                } else {
+                    outputElement.textContent = 'AI Assistant is not available.';
+                }
+            } catch (error) {
+                outputElement.textContent = `An error occurred: ${error.message}`;
+            }
+        }
+
+        // Set default values after page load
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const { defaultTemperature, defaultTopK } = await ai.assistant.capabilities();
+                document.getElementById('temperature').value = defaultTemperature;
+                document.getElementById('topK').value = Math.min(defaultTopK, 128);
+            } catch (error) {
+                console.error('Unable to get AI Assistant capabilities:', error);
+            }
+        });
+    </script>
+</body>
+</html>
