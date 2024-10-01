@@ -1,32 +1,29 @@
-How to run Gemini Nano locally in your browser?
+# How to Run Gemini Nano Locally in Your Browser
 
-In this artile, I am going to share how to use Google Chrome(Developer) to run Gemini Nano.
+In this article, I am going to share how to use Google Chrome (Developer Version) to run Gemini Nano.
 
-Setup:
-1.	Go to https://www.google.com/chrome/dev/
-Download the Chrome Developer Version
-2.	Go to chrome://flags
-search prompt-api-for-gemini-nano
-Select Enabled
-search optimization-guide-on-device-model
-Select Enabled BypassPerfRequirement
+## Setup Steps:
 
-(/images/chrome_flags.jpg)
+1. Go to [Google Chrome Developer Tools](https://www.google.com/chrome/dev/) to download the Chrome Developer Version.
+   
+2. In the address bar, enter `chrome://flags`, search for `prompt-api-for-gemini-nano`, and set it to **Enabled**.
 
-3.	Relaunch Chrome
+3. Similarly, search for `optimization-guide-on-device-model` in `chrome://flags` and set it to **Enabled BypassPerfRequirement**.
 
-4.	Go to chrome://components
-Check Optimization Guide On Device Model version greater or equal to 2024.5.21.1031.
+   ![Chrome Flags](images/chrome_flags.jpg)
 
-(/images/chrome_compoments.jpg)
+4. Relaunch Chrome.
 
-5.	Press “F12” open DevTools and send
-(await ai.assistant.capabilities()).available;
-in the console.
-If this returns “readily”, then you are all set.
+5. Go to `chrome://components` and check if the `Optimization Guide On Device Model` version is greater than or equal to `2024.5.21.1031`.
 
-Download Gemini_Nano_test.html to your PC. Open it with Chrome Developer Version and enter your prompt.
+   ![Chrome Components](images/chrome_components.jpg)
 
-(/images/test.jpg)
+6. Press **F12** to open DevTools and enter the following command in the console:
+   (await ai.assistant.capabilities()).available;
+   If this returns **“readily”**, then you are all set.
 
-Now you can run Gemini Nano locally.
+7. Download `Gemini_Nano_test.html` to your PC. Open it with the Chrome Developer Version and enter your prompt.
+
+   ![Test Image](images/test.jpg)
+
+Now you can run Gemini Nano locally!
