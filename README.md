@@ -1,6 +1,6 @@
-# How to Run Gemini Nano Locally in Your Browser
+# How to Run Gemini Nano Locally???
 
-In this article, I am going to share how to use Google Chrome (Developer Version) to run Gemini Nano.
+Hi every, I am going to share how to use Google Chrome (Developer Version) to run Gemini Nano.
 
 ## Setup Steps:
 
