@@ -28,4 +28,4 @@ Hi everyone, I am going to share how to use Google Chrome (Developer Version) to
 
    ![Test Image](images/test.jpg)
 
-Now you can run Gemini Nano locally!
+Now you can run Gemini Nano locally! (Even without an internet connection~)
