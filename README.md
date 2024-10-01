@@ -4,7 +4,7 @@ Hi everyone, I am going to share how to use Google Chrome (Developer Version) to
 
 ## Setup Steps:
 
-1. Go to [Google Chrome Developer Tools](https://www.google.com/chrome/dev/) to download the Chrome Developer Version.
+1. Go to [Google Chrome Developer Tools](https://www.google.com/chrome/dev/) to download the Chrome Developer Version. And confirm that your version is equal or newer than 128.0.6545.0.
    
 2. In the address bar, enter `chrome://flags`, search for `prompt-api-for-gemini-nano`, and set it to **Enabled**.
 
