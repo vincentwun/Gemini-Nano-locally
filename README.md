@@ -25,7 +25,7 @@ Check Optimization Guide On Device Model version greater or equal to 2024.5.21.1
 in the console.
 If this returns “readily”, then you are all set.
 
-Download test.html to your PC. Open it with Chrome Developer Version and enter your prompt.
+Download Gemini_Nano_test.html to your PC. Open it with Chrome Developer Version and enter your prompt.
 
 (/images/test.jpg)
 
