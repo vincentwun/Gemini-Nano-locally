@@ -44,3 +44,6 @@
    ![測試圖片](images/test.jpg)
 
 好的, 現在您可以在本地運行 Gemini Nano 了！（甚至無需網路連接～）
+
+如需更詳細資料, 請參閱以下官方連結:
+https://docs.google.com/document/d/1VG8HIyz361zGduWgNG7R_R8Xkv0OOJ8b5C9QKeCjU0c/edit?tab=t.0
